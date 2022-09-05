@@ -24,18 +24,18 @@
 
       $("#test").click((evt) => {
         alert("Event Sent");
+
         //https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en
         alloy("sendEvent", {
           "xdm": {
-            "eventType": "commerce.purchases",
-            "commerce": {
-              "order": {
-                "purchaseID": "a8g784hjq1mnp3",
-                "purchaseOrderNumber": "VAU3123",
-                "currencyCode": "USD",
-                "priceTotal": 999.98
+
+            "productListItems": [
+              {
+                "product": "Bicycle",
+                "priceTotal": 1000
               }
-            }
+            ]
+
           }
         })
       });
