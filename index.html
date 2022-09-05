@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://assets.adobedtm.com/b754ed1bed61/83fa67bc1864/launch-0ebefaf62399-development.min.js" async></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 5 Boilerplate</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://assets.adobedtm.com/b754ed1bed61/83fa67bc1864/launch-0ebefaf62399-development.min.js"
+    async></script>
+
+</head>
+
+<body>
   <h1> La tienda de Sebas </h1>
   <a href="p1.html">P1</a>
   <a href="p2.html">P2</a>
-	<script></script>
-  </body>
+  <button id="test">Go</button>
+  <script>
+
+    $(document).ready((event) => {
+
+      $("#test").click((evt) => {
+        alert("Event Sent")
+        alloy("sendEvent", {
+          "xdm": {
+            "eventType": "commerce.purchases",
+            "commerce": {
+              "order": {
+                "purchaseID": "a8g784hjq1mnp3",
+                "purchaseOrderNumber": "VAU3123",
+                "currencyCode": "USD",
+                "priceTotal": 999.98
+              }
+            }
+          }
+        })
+      });
+    })
+
+  </script>
+</body>
+
 </html>
