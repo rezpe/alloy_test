@@ -23,7 +23,8 @@
     $(document).ready((event) => {
 
       $("#test").click((evt) => {
-        alert("Event Sent")
+        alert("Event Sent");
+        //https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en
         alloy("sendEvent", {
           "xdm": {
             "eventType": "commerce.purchases",
