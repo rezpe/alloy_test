@@ -14,6 +14,7 @@
 
 <body>
   <h1> Danfoss test </h1>
+  <div id="ECID"></div>
   <button id="test">Go</button>
   <script>
 
@@ -22,6 +23,7 @@
         .then(function (result) {
           $("#test").click((evt) => {
             alert("Event Sent");
+            $("#ECID").html(result.identity.ECID)
             //https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en
             /*alloy("sendEvent", {
               "xdm": {
